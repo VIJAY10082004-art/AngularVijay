@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { Git } from '../git';
+import { Git } from './git';
 
 describe('Git', () => {
   let service: Git;

@@ -1,9 +1,12 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { Git } from '../../git/git';
+import { NestedRou } from "../nested-rou/nested-rou";
+import { RouterOutlet, RouterLinkWithHref } from '@angular/router';
 
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-git-comp',
-  imports: [],
+  imports: [NestedRou, RouterOutlet, RouterLinkWithHref,RouterModule],
   templateUrl: './git-comp.html',
   styleUrl: './git-comp.css',
 })
