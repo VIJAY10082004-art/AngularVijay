@@ -1,0 +1,14 @@
+p{
+    background-color: aqua;
+}
+.active{
+    background-color: blueviolet;
+    color: blanchedalmond;}
+ .inactive{
+    background-color: rgb(226, 226, 43);
+    color: rgb(23, 21, 21);}
+
+.always:hover{
+
+background-color: rgb(222, 25, 107);
+    color: rgb(243, 217, 22);}

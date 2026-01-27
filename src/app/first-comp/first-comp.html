@@ -1,0 +1,32 @@
+<nav>
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+</nav>
+<p [style]=nameStyle [hidden]="visibility">{{name}}</p>
+<!-- 1 way data binding -->
+<button (click)="clickChangeState()">clickChangeState</button>
+<label for="name">Name</label>
+
+<!-- 1 way binding -->
+<!-- <input type="text" value="{{name}}" (change)="clickChangeName($event.target.value)"
+ id="name" [value]="name"> -->
+ 
+<!-- task -->
+
+<button (click)="clickColorChange('red')">Red</button>
+<button (click)="clickColorChange('green')">Green</button>
+<button (click)="clickColorChange('blue')">Blue</button>
+<!-- 2 way binding -->
+
+<input type="text" id="name"  [(ngModel)] = "name">
+
+<!-- <h1 [ngClass]="isLogged? 'active':'inactive'" >{{name}}</h1> -->
+<h1 [ngClass]="{
+active:isLogged,
+inactive:!isLogged,
+always:true
+}">{{name}}</h1>
+<button (click)="logState()">Login</button>

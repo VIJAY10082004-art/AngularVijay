@@ -1,0 +1,108 @@
+<!-- <nav>
+    <li>Home</li>
+    <li>About</li>
+    <li>Contact</li>
+</nav> -->
+
+<!-- <h1 [style]="h1Style" >NAME:{{obj.name}}</h1>
+<h1 [style]="h1Style">AGE:{{obj.age}}</h1>
+<button (click)="clickButton()" > Click</button> -->
+<!-- <input type="text" #inp>
+<button (click)="handleSubmit(inp.value)">Submit</button>
+<p>{{display}}</p> -->
+<!-- <input type="number" id="age"  [(ngModel)] ="obj.age"> -->
+
+<!-- <input type="text" value="{{obj.name}}" (change)="clickChangeName($event.target.value)"
+ id="name" [value]="obj.name"> -->
+ 
+ <!-- <input type="text" name="" id="" [value]="obj.name">
+<input type="submit" id="name"  (submit)="clickSubmit(
+    obj.name
+)">
+
+<h1   >{{obj.name}}</h1> -->
+
+<!-- <h1 [ngStyle]="{color:'red'}">
+   Vijay 
+</h1>
+<h1 [ngClass]="{ 'vijay': true }">
+  Hello Vijay
+</h1>
+<h1 *ngIf="isLogged">Vijay</h1> -->
+
+
+
+<!-- <button (click)="clickCar()">{{carState}}</button>
+@if (isCar) {
+    <img src="https://images.pexels.com/photos/981041/pexels-photo-981041.jpeg?cs=srgb&dl=action-american-car-asphalt-981041.jpg&fm=jpg"
+
+height="300px" width="300px"
+alt="">
+} -->
+
+
+<!-- @for (item of arr; track item['name']) {
+
+    <p>{{item|json}}</p>
+}
+@for(item of arr;track item){
+    <section >
+        <h4>{{item['name']}}</h4>
+        <img [src]="item[`img`]"height="40%" width="50%" alt="">
+        <p>{{item['sal']|currency:"INR"}}</p>
+    </section>
+} -->
+
+
+<div class="button">
+<button class="buttonOne" (click)="clickCard()">Card</button>
+<button class="buttonTwo" (click)="clickList()">List</button>
+<button class="buttonThree" (click)="clickTable()">Table</button>
+</div>
+
+@if (index==1) {
+@for (item of data; track item) {
+
+<div class="Card">
+    <img class="image"[src]="item['image']"  alt="" >
+<h1>{{item['id']}}</h1>
+<h1>{{item['title']}}</h1>
+<h1>{{item['price']|currency:"INR"}} </h1>    
+<h1></h1>
+    
+</div>
+    
+}
+}
+
+    @else if (index==2) {
+@for (item of data; track item) {
+
+<div id="List">
+    <ul>
+         <li><h1 class="text">{{ item['id'] }}</h1></li>
+        <li><h1 class="text">{{ item['title'] }}</h1></li>
+        <li><h1 class="text">{{item['price']|currency:"INR"}}</h1></li>
+       
+    </ul>
+</div>
+
+    
+
+
+}}
+@else{
+    @for (item of data; track item)
+{
+
+<table border="3"  class="table">
+    <tr>
+        <td>{{item['id']}}</td>
+        <td>{{item['title']}}</td>
+        <td>{{item['price']|currency:"INR"}}</td>
+        <td><img [src]="item['image']" alt=""></td>
+    </tr>
+</table>
+}
+
+}
