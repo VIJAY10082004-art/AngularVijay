@@ -1,0 +1,75 @@
+
+<!--#form will be handled by angular it will be passed to submit method to print data-->
+<form #form="ngForm" (ngSubmit)="handleSubmit(form)" >
+    <!--Ng Model for getting data with ts-->
+    <div>
+        <label for="Name">NAME:</label>
+<input type="text" name="Name" id="" [(ngModel)]="Name" 
+ required #name="ngModel"
+ [ngClass]="{'valid':name.valid,
+
+
+
+    'invalid':name.invalid
+ }"
+ 
+ 
+ ><!--diffferent form ngModel it is localized control-->
+@if(name.getError('required') &&name.touched){
+    <p style="color: red; font-size: small;">User Name is mandatory</p>
+}
+    </div>
+    
+
+<div>
+   <label for="Password">PASSWORD:</label>
+<input type="text" name="Password" id=""[(ngModel)]="Password" 
+required #password="ngModel" minlength="8" maxlength="8"
+ [ngClass]="{'valid':password.valid,
+    'invalid':password.invalid
+ }" >
+@if(password.getError('minlength') &&password.touched){
+    <p style="color: red; font-size: small; ">Password  Length Must be 8 characters</p>
+}
+</div>
+
+
+
+<div>
+    <select name="country"  [(ngModel)]="country">
+    <option value="" disabled selected hidden>SELECT A CONTURY</option>
+    @for (item of countryList; track $index) {
+
+        <option [value]="item">{{item}}</option>
+    }
+    @empty {
+        <p>Data Not Found</p>
+    }
+
+    </select>
+</div>
+
+<div>
+    <p>Gender : </p>
+    male<input type="radio" name="gender" id="" value="male" [(ngModel)] = 'gender'><br>
+    female<input type="radio" name="gender" id="" value="female" [(ngModel)] = 'gender'><br>
+    other<input type="radio" name="gender" id="" value="other" [(ngModel)] = 'gender'><br>
+  </div>
+  <div>
+    <p>Hobbies:</p>
+   Singing <input type="checkbox" name="singig" value="singing" 
+   (change)="handleChange($event)">
+    
+    Painting<input type="checkbox" name="painting" value="painting"
+    (change)="handleChange($event)">
+    Coding<input type="checkbox" name="coding" value="coding"
+    (change)="handleChange($event)">
+  </div>
+  
+   <button type="submit" [disabled]="form.invalid">
+    Login
+  </button>
+
+
+</form>
+<p>{{hobbies | json}}</p>

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Child } from './child';
+import { HttpComp } from './http-comp';
 
-describe('Child', () => {
-  let component: Child;
-  let fixture: ComponentFixture<Child>;
+describe('HttpComp', () => {
+  let component: HttpComp;
+  let fixture: ComponentFixture<HttpComp>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Child]
+      imports: [HttpComp]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Child);
+    fixture = TestBed.createComponent(HttpComp);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

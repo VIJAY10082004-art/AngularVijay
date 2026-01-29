@@ -4,12 +4,12 @@ import { inject, Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class Git {
-  http=inject(HttpClient)
-
+export class HttpData {
+   http=inject(HttpClient)
+//return is obersvable
 getData(){
  return this.http.get('https://api.github.com/users')
 
 }
-
+  
 }

@@ -9,7 +9,7 @@ import { Component, inject, signal } from '@angular/core';
   styleUrl: './service-comp.css',
 })
 export class ServiceComp {
-  abc=signal("hi chellam")
+  // abc=signal("hi chellam")
 UserData=inject(UserData)
 name:string="";
 img:string="";
