@@ -1,0 +1,63 @@
+<form #form="ngForm" (ngSubmit)="handleSubmit(form)"  >
+    <div>
+        <label for="Name">NAME</label>
+        <input type="text" name="Name" id="Name"
+        [(ngModel)]="obj.name"
+        #name required >
+        
+
+
+    </div>
+    <div>
+        <label for="Email">EMAIL</label>
+        <input type="email" name="Email" id=""
+         [(ngModel)]="obj.email"
+
+        #email="ngModel" required email>
+        @if(email.getError('email') && email.touched){
+            <p style="color: brown;">Enter valid Email</p>
+        }
+
+    </div>
+    <div>
+        <label for="PhoneNo"></label>
+        <input type="tel" name="PhoneNo" id=""
+         [(ngModel)]="obj.phoneno"
+        #phoneno="ngModel" required minlength="10" maxlength="10">
+        @if ((phoneno.getError('minlength') && phoneno.getError('maxlength') )||phoneno.touched) {
+<p style="color: brown;">Enter valid Phone No</p>
+        }
+   <div>
+    <select name="country"  [(ngModel)]="obj.branch">
+    <option disabled selected hidden  >Branch</option>
+    @for (item of branchesList; track $index) {
+
+        <option [value]="item">{{item}}</option>
+    }
+    @empty {
+        <p>Branch Not Found</p>
+    }
+
+    </select>
+</div>
+<div>
+    <p>Gender :</p>
+    male<input type="radio" name="gender" id="" value="male" [(ngModel)] = 'obj.gender'>
+    female<input type="radio" name="gender" id="" value="female" [(ngModel)] = 'obj.gender'>
+    other<input type="radio" name="gender" id="" value="other" [(ngModel)] = 'obj.gender'>
+  </div>
+      Java <input type="checkbox" name="" id="" value="Java" (change)="handleChange($event)">
+      Python<input type="checkbox" name="" id="" value="Python" (change)="handleChange($event)">
+      Rust<input type="checkbox" name="" id=""  value="Rust"         (change)="handleChange($event)">
+      C<input type="checkbox" name="" id="" value="C"    (change)="handleChange($event)">
+      @if (skills.length==0) {
+        <p style="color: brown;">Choose Atleast One skill</p>
+      }
+
+    </div>
+    <button type="submit">Register</button>
+
+
+
+</form>
+<p>{{skills|json}}</p>

@@ -15,6 +15,7 @@ export class SignUp {
 Name: string="";
 
 PhoneNo:string=""
+ConfirmPasswordEnter: any;
 
 
 handleSubmit(data:any){

@@ -33,6 +33,7 @@ countryList=['India','USA','Pakistan']
 // }
 
 hobbies:string[]=[];
+skill: any;
 handleSubmit(data:NgForm){
 
   // console.log(data.value);

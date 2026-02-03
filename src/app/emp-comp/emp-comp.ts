@@ -9,4 +9,7 @@ import { Emp } from '../../service/emp';
 })
 export class EmpComp {
 emp=inject(Emp)
+
+
 }
+
