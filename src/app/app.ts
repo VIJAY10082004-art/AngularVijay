@@ -22,11 +22,12 @@ import { TaskSignup } from "./task-signup/task-signup";
 import { IncCounter } from "./inc-counter/inc-counter";
 import { DisCounter } from "./dis-counter/dis-counter";
 import { ServiceCal } from "./service-cal/service-cal";
+import {  TaskCustomComponent } from "./task-custom/task-custom";
 
 
 @Component({
   selector: 'app-root',
-  imports: [HttprouterComp, RouterOutlet, HttpComp, FirstComp, ChildComp, PraticeComp, ServiceComp, GitComp, RComp, TemplateDriven, GroceryList, EmpComp, SignUp, ChildComp, ParentComp, RegisterComp, CutomDir, DynamicParent, TaskLogin, TaskSignup, IncCounter, DisCounter, ServiceCal],
+  imports: [HttprouterComp, RouterOutlet, HttpComp, FirstComp, ChildComp, PraticeComp, ServiceComp, GitComp, RComp, TemplateDriven, GroceryList, EmpComp, SignUp, ChildComp, ParentComp, RegisterComp, CutomDir, DynamicParent, TaskLogin, TaskSignup, IncCounter, DisCounter, ServiceCal, TaskCustomComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
